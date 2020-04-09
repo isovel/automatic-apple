@@ -62,6 +62,8 @@ class moderation(commands.Cog):
             await ctx.send("oh neat! two apples! 🍎🍎")
         elif 26<=roll<=30:
             await ctx.send("you found a green apple. it is the enemy. remove it at once. 🚫🍏🚫")
+        elif roll==31:
+            await ctx.send("well you didnt find an apple but you found an appley sergal 🧀🐧")
         else:
             await ctx.send("here u go: 🍎")
 
