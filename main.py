@@ -66,8 +66,8 @@ async def on_message_delete(ctx):
 
 @bot.event
 async def on_message_edit(before: discord.Message, after: discord.Message):
-    if before.embed==after.embed: return
-    elif len(str(discord.utils.escape_markdown(before.content))) < 2000 and len(
+    #if before.embed==after.embed: return
+    if len(str(discord.utils.escape_markdown(before.content))) < 2000 and len(
             str(discord.utils.escape_markdown(after.content))) < 2000:
         now = datetime.now()
         await before.guild.get_channel(695630766477934632).send("Message by `{author}` edited in `{channel}` at `"
