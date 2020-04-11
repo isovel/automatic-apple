@@ -7,9 +7,10 @@ from discord.ext import commands
 import traceback
 import sys
 from datetime import datetime
+import pickledb
 
 
-initial_extensions = ['cog']
+initial_extensions = ['cog', 'apple']
 
 
 def gettoken():
