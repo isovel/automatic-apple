@@ -29,6 +29,7 @@ class apple(commands.Cog):
 
     @commands.command()
     async def sniff(self, ctx):
+        """------ sniffs for any apples that might be lying around"""
         sniff_roll = randint(0,4)
         if 0<=sniff_roll<=2 or self.any_apples('ground')==False:
             await ctx.send("you didn't find any apples :(")
