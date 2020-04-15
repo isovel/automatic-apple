@@ -21,11 +21,12 @@ class apple(commands.Cog):
     def any_apples(self, id):
         db = pickledb.load('appledb', False)
         existing_apples = db.get(str(id))
+        db.dump()
         if existing_apples>=1:
             return True
         else:
             return False
-        db.dump()
+
 
     @commands.command()
     async def sniff(self, ctx):
@@ -75,7 +76,7 @@ class apple(commands.Cog):
             await ctx.send("oh my god you found a GOLD APPLE! that's worth SEVEN apples! 🌟🌟🍎🌟🌟")
             self.give_apples(ctx.author.id, 7)
         elif 4 <= roll <= 14:
-            await ctx.send("hey nice apple dude! that's gotta be worth three apples! 💫🍎💫")
+            await ctx.send("hey nice apple! that's gotta be worth three apples! 💫🍎💫")
             self.give_apples(ctx.author.id, 3)
         elif roll == 15 or roll == 16:
             await ctx.send("oh dear. you found a rotten apple :( you let another apple go bad! 🤢🍎🤢")
@@ -85,9 +86,7 @@ class apple(commands.Cog):
             self.give_apples(ctx.author.id, 2)
         elif 26 <= roll <= 30:
             await ctx.send("you found a green apple. it is the enemy. remove it at once. 🚫🍏🚫")
-        elif roll == 31:
-            await ctx.send("well you didnt find an apple but you found an appley sergal 🧀🐧")
-        elif 32<=roll<=80:
+        elif 31<=roll<=80:
             await ctx.send("here u go: 🍎")
             self.give_apples(ctx.author.id, 1)
         else:
