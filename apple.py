@@ -62,6 +62,8 @@ class apple(commands.Cog):
         """------ tells you how many apples you have"""
         db = pickledb.load('appledb', False)
         apple_count = db.get(str(ctx.author.id))
+        if apple_count == False or apple_count == str(False):
+            await ctx.send("you don't have any apples :(")
         await ctx.send("you've got {count} apples!".format(count=str(apple_count)))
         db.dump()
 
