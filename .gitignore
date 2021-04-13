@@ -1,7 +1,5 @@
-/token.txt
-/dev_appledb
-/.idea
-/appledb
-/debug.py
-/debug_main.py
-/__pycache__
+token.txt
+*.db
+appledb
+.idea
+__pycache__
