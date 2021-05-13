@@ -29,7 +29,7 @@ class apple(commands.Cog):
             await ctx.send("you didn't find any apples :(")
         else:
             ground_apples = self.get_apples('ground')
-            await ctx.send(f"you found {ground_apples} apples!")
+            await ctx.send(f"you found {ground_apples} apple{'s' if ground_apples > 1 else ''}!")
             self.give_apples(ctx.author.id, ground_apples)
             self.give_apples('ground', int(-1 * ground_apples))
 
